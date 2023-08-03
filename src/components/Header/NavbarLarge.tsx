@@ -50,7 +50,15 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
 
         <Box color="white">
           {navItems.map((navItem) => (
-            <Popover content={<Menu title={navItem?.name} />}>
+            <Popover
+              overlayStyle={{
+                borderRadius: 0,
+              }}
+              overlayInnerStyle={{
+                padding: 0,
+              }}
+              content={<Menu title={navItem?.name} />}
+            >
               <NextLink
                 key={navItem.id}
                 className={`nav-item mx-3 ${
