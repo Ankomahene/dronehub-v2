@@ -1,5 +1,8 @@
-import { Box, Container, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, Button, Container, Text } from "@chakra-ui/react";
 import { v4 as uid } from "uuid";
+import Products from "./MenuItems/Products";
+import { CloseIcon } from "@chakra-ui/icons";
 
 const links = [
   {
@@ -30,9 +33,10 @@ const links = [
 ];
 
 const Menu = ({ title }: { title: string }) => {
+  const [url, setUrl] = useState(title);
   return (
     <Container as="nav" p="0px" minW="100vw" minH="90vh">
-      <Box display="flex" h="full" gap={3}>
+      <Box display="flex" h="full" gap={3} overflow="auto">
         <Box
           display="flex"
           color="#fff"
@@ -47,27 +51,38 @@ const Menu = ({ title }: { title: string }) => {
           <Box>
             {links.map((item) => (
               <Box key={item.id}>
-                <Text
-                  fontSize="22px"
-                  fontWeight={`${title === item.name ? "700" : "400"}`}
-                  lineHeight={12}
-                  style={{
-                    borderBottom: `${
-                      title === item.name ? "1px solid white" : ""
-                    }`,
-                  }}
-                  paddingY={2}
-                  cursor="pointer"
-                  textAlign="left"
-                >
-                  {item.title}
-                </Text>
+                <button onClick={() => setUrl(item.name)}>
+                  <Text
+                    fontSize="22px"
+                    fontWeight={`${url === item.name ? "700" : "400"}`}
+                    lineHeight={10}
+                    style={{
+                      borderBottom: `${
+                        url === item.name ? "2px solid white" : ""
+                      }`,
+                    }}
+                    paddingY={2}
+                    textAlign="left"
+                  >
+                    {item.title}
+                  </Text>
+                </button>
               </Box>
             ))}
           </Box>
         </Box>
-        <Box p={8} w="full" flex={0.7}>
-          {title}
+        <Box p={8} w="full" flex={0.7} overflowY="auto">
+          <Box
+            w="full"
+            display="flex"
+            justifyContent="flex-end"
+            alignItems="flex-end"
+          >
+            <Button variant="unstyled">
+              <CloseIcon w={6} h={6} color="#0645A4" />
+            </Button>
+          </Box>
+          {url === "Products" && <Products />}
         </Box>
       </Box>
     </Container>
