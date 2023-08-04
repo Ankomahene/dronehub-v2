@@ -1,15 +1,13 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
-import Link from "next/link";
-import NextLink from "next/link";
-import React, { useEffect, useState } from "react";
-import { useWindowScroll } from "react-use";
-import { logoDark, logoLight } from "../../consts";
-import { INavItem } from "../../models/app";
-import { Button } from "../Buttons/Button";
-import styles from "./Header.module.scss";
-import { getHeaderStyles } from "./_styles";
-import { Popover } from "antd";
-import Menu from "./Menu";
+import { Box, Flex, Image } from '@chakra-ui/react';
+import Link from 'next/link';
+import NextLink from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { useWindowScroll } from 'react-use';
+import { logoDark, logoLight } from '../../consts';
+import { INavItem } from '../../models/app';
+import { Button } from '../Buttons/Button';
+import styles from './Header.module.scss';
+import { getHeaderStyles } from './_styles';
 
 interface NavbarLargeProps {
   navItems: INavItem[];
@@ -38,7 +36,7 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
     >
       <Flex
         px="1rem"
-        w={{ base: "100%", lg: "95%", xl: "90%" }}
+        w={{ base: '100%', lg: '95%', xl: '90%' }}
         m="auto"
         py="0.5rem"
         justify="space-between"
@@ -50,108 +48,31 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
 
         <Box color="white">
           {navItems.map((navItem) => (
-            <Popover
+            <NextLink
               key={navItem.id}
-              overlayStyle={{
-                borderRadius: 0,
-              }}
-              overlayInnerStyle={{
-                padding: 0,
-              }}
-              content={<Menu title={navItem?.name} />}
+              className={`nav-item mx-3 ${
+                isScrolled ? 'text-dark' : 'text-light'
+              }`}
+              href={navItem.link}
+              passHref
             >
-              <NextLink
-                key={navItem.id}
-                className={`nav-item mx-3 ${
-                  isScrolled ? "text-dark" : "text-light"
-                }`}
-                href={navItem.link}
-                passHref
-              >
-                {navItem.name}
-              </NextLink>
-            </Popover>
+              {navItem.name}
+            </NextLink>
           ))}
-          {/* <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/products"
-              passHref
-            >
-              Products
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/products"
-              passHref
-            >
-              Services
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/services"
-              passHref
-            >
-              Products
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/deals"
-              passHref
-            >
-              Deals
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/support"
-              passHref
-            >
-              Support
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/about"
-              passHref
-            >
-              About us
-            </NextLink>
-          </Popover> */}
         </Box>
         <Flex gap="10px">
           <Link href="/consumer">
             <Button
               title="Consumer Solutions"
               bg="transparent"
-              color={isScrolled ? "brand.blue" : "gray.100"}
+              color={isScrolled ? 'brand.blue' : 'gray.100'}
             />
           </Link>
           <Link href="/business">
             <Button
               title="Enterprise Solutions"
-              bg={isScrolled ? "brand.blue" : "white"}
-              color={isScrolled ? "gray.100" : "brand.blue"}
+              bg={isScrolled ? 'brand.blue' : 'white'}
+              color={isScrolled ? 'gray.100' : 'brand.blue'}
             />
           </Link>
         </Flex>
