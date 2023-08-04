@@ -51,6 +51,7 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
         <Box color="white">
           {navItems.map((navItem) => (
             <Popover
+              key={navItem.id}
               overlayStyle={{
                 borderRadius: 0,
               }}
