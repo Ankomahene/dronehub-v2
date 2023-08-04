@@ -1,7 +1,19 @@
-import { ReactNode } from 'react';
-import { IconType } from 'react-icons/lib';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { ReactNode } from "react";
+import { IconType } from "react-icons/lib";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
+interface ISubContent {
+  id: string;
+  name: string;
+  link: string;
+}
+
+interface IContent {
+  id: string;
+  name: string;
+  link: string;
+  subContent?: ISubContent[];
+}
 export interface IAccessory {
   id: string;
   name: string;
@@ -52,7 +64,7 @@ export interface IDroneProperties {
 
 export interface ICameraProperties extends IDroneProperties {}
 export interface IOtherProductsProperties
-  extends Omit<IDroneProperties, 'tagline' | 'series'> {
+  extends Omit<IDroneProperties, "tagline" | "series"> {
   description: string;
 }
 export interface IProductSectionItem {
@@ -69,6 +81,7 @@ export interface INavItem {
   id: string;
   name: string;
   link: string;
+  content?: IContent[];
 }
 export interface IContactItem {
   id: string;
@@ -99,14 +112,14 @@ export interface IDeal {
 }
 
 export type Service =
-  | 'repairs'
-  | 'education'
-  | 'consulting'
-  | 'rental'
-  | 'maintenance'
-  | 'detection'
-  | 'custom'
-  | 'research';
+  | "repairs"
+  | "education"
+  | "consulting"
+  | "rental"
+  | "maintenance"
+  | "detection"
+  | "custom"
+  | "research";
 
 export type IAllServices = {
   [key in Service]: IService;
@@ -118,29 +131,29 @@ export interface IService {
 }
 
 export type DroneSeries =
-  | 'mavic-series'
-  | 'phantom-series'
-  | 'matrice-series'
-  | 'agras-series'
-  | 'dji-fpv-drone'
-  | 'inspire-series';
+  | "mavic-series"
+  | "phantom-series"
+  | "matrice-series"
+  | "agras-series"
+  | "dji-fpv-drone"
+  | "inspire-series";
 
 export type CameraSeries =
-  | 'zenmuse-series'
-  | 'osmos-series'
-  | 'ronin-series'
-  | 'extra-payload';
+  | "zenmuse-series"
+  | "osmos-series"
+  | "ronin-series"
+  | "extra-payload";
 
 export type Industry =
-  | 'agricultural'
-  | 'surveying'
-  | 'media-entertainment'
-  | 'mining'
-  | 'public-safety'
-  | 'forestry'
-  | 'energy-infrastructure'
-  | 'construction'
-  | 'security';
+  | "agricultural"
+  | "surveying"
+  | "media-entertainment"
+  | "mining"
+  | "public-safety"
+  | "forestry"
+  | "energy-infrastructure"
+  | "construction"
+  | "security";
 
 export interface IProductsState {
   mavicSeries: IProductSectionItem[];
@@ -153,13 +166,13 @@ export interface IProductsState {
   softwareAndOthers: IProductSectionItem[];
 }
 
-type FAQTarget = 'business' | 'consumers';
+type FAQTarget = "business" | "consumers";
 type FAQCategory =
-  | 'drone-accessories'
-  | 'drone-service'
-  | 'Drone Service'
-  | 'store'
-  | 'other-issues';
+  | "drone-accessories"
+  | "drone-service"
+  | "Drone Service"
+  | "store"
+  | "other-issues";
 
 export interface IFAQ {
   id: string;
@@ -172,7 +185,7 @@ export interface IBlogOverview {
   id: string;
   title: string;
   slug: string;
-  type: 'guide' | 'story';
+  type: "guide" | "story";
 }
 export interface IBlogArticle extends IBlogOverview {
   tagline: string;
