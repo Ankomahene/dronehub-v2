@@ -1,96 +1,145 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import { Container, Box, Divider, Text, Flex, Spacer } from "@chakra-ui/react";
+import Image from "next/image";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { v4 as uid } from "uuid";
 import styles from "../Header.module.scss";
 
-const consumer = [
+const services = [
   {
     id: uid(),
-    name: "Mavic Series",
+    name: "Drone Repair",
     link: "#",
   },
   {
     id: uid(),
-    name: "Phantom Series",
+    name: "Drone Rental",
     link: "#",
   },
   {
     id: uid(),
-    name: "FPV Series",
+    name: "Drone Consulting",
     link: "#",
   },
   {
     id: uid(),
-    name: "Osmo Series",
-    link: "#",
-  },
-];
-
-const professional = [
-  {
-    id: uid(),
-    name: "Inspire Series",
+    name: "Drone Maintenance",
     link: "#",
   },
   {
     id: uid(),
-    name: "Ronin Series",
-    link: "#",
-  },
-];
-
-const enterprise = [
-  {
-    id: uid(),
-    name: "Matrice Series",
+    name: "Drone Detection Solution",
     link: "#",
   },
   {
     id: uid(),
-    name: "Mavic Enterprise Series",
+    name: "Drone Applied Research",
     link: "#",
   },
   {
     id: uid(),
-    name: "Phantom Enterprise Series",
+    name: "Drone Education",
     link: "#",
   },
   {
     id: uid(),
-    name: "Zenmuse Series",
-    link: "#",
-  },
-  {
-    id: uid(),
-    name: "Agras Series",
+    name: "Custom Solutions",
     link: "#",
   },
 ];
 
-const Products = () => {
-  const [arrow, showArrow] = useState(false);
+const software = [
+  {
+    id: uid(),
+    name: "DJI Terra",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "DJI Flighthub",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "DJI Flight Simulator",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Ground Station Pro",
+    link: "#",
+  },
+];
+
+const industrial = [
+  {
+    id: uid(),
+    name: "Agriculture",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Construction",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Energy & Infrastructure",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Forestry",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Media",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Mining",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Public Safety",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Security",
+    link: "#",
+  },
+  {
+    id: uid(),
+    name: "Surveying & Mapping",
+    link: "#",
+  },
+];
+
+const Services = () => {
   return (
     <Box w="full" marginBottom={8}>
       <Flex justifyContent="space-evenly" alignItems="center">
         <Box>
           <Image
-            src={require("/public/assets/images/menus/DJI FPV Drone_3 3.png")}
-            width={147}
-            height={100}
+            src={require("/public/assets/images/menus/Services/services.png")}
+            width={190}
+            height={120}
             alt="consumer"
           />
           <Text paddingY={1} fontSize={18} textAlign="center" fontWeight="bold">
-            Consumer
+            Services
           </Text>
           <Box>
             <Text paddingY={1} color="#979797" fontSize="14px">
-              Explore your creativity
+              Customised and reliable support solutions
             </Text>
             <Box>
-              {consumer.map((item) => (
+              {services.map((item) => (
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
@@ -113,21 +162,21 @@ const Products = () => {
 
         <Box>
           <Image
-            width={186}
-            height={84}
-            src={require("/public/assets/images/menus/Inspire_2_3.png")}
-            alt="consumer"
+            width={120}
+            height={120}
+            src={require("/public/assets/images/menus/Services/Icon 256_256 1.png")}
+            alt="software"
           />
 
           <Text paddingY={1} fontSize={18} textAlign="center" fontWeight="bold">
-            Professional
+            Software
           </Text>
           <Box>
             <Text paddingY={1} color="#979797" fontSize="14px">
-              Master at your craft
+              Drone software solutions optimized for your project
             </Text>
             <Box>
-              {professional.map((item) => (
+              {software.map((item) => (
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
@@ -150,21 +199,21 @@ const Products = () => {
 
         <Box>
           <Image
-            width={226}
-            height={84}
-            src={require("/public/assets/images/menus/Matrice_300_RTK_2.png")}
+            width={200}
+            height={120}
+            src={require("/public/assets/images/menus/Services/industrial.png")}
             alt="consumer"
           />
 
           <Text paddingY={1} fontSize={17} textAlign="center" fontWeight="bold">
-            Enterprise
+            Industrial Solutions
           </Text>
           <Box>
             <Text paddingY={1} color="#979797" fontSize={13}>
-              Drone solutions for work
+              New generation drone solutions for your line of work
             </Text>
             <Box>
-              {enterprise.map((item) => (
+              {industrial.map((item) => (
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
@@ -189,9 +238,9 @@ const Products = () => {
       </Flex>
       <Divider />
       <Box paddingY={4} paddingLeft={20} marginBottom={20}>
-        <Link href="/products">
+        <Link href="/services">
           <Box display="flex" gap={3} color="#0645A4" alignItems="center">
-            <Text fontSize={20}>View all products</Text>
+            <Text fontSize={20}>View all services</Text>
             <ArrowForwardIcon w={8} h={5} />
           </Box>
         </Link>
@@ -200,4 +249,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Services;

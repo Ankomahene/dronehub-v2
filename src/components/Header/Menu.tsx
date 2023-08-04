@@ -3,6 +3,10 @@ import { Box, Button, Container, Text } from "@chakra-ui/react";
 import { v4 as uid } from "uuid";
 import Products from "./MenuItems/Products";
 import { CloseIcon } from "@chakra-ui/icons";
+import Services from "./MenuItems/Services";
+import Extras from "./MenuItems/Extras";
+import Support from "./MenuItems/Support";
+import About from "./MenuItems/About";
 
 const links = [
   {
@@ -71,7 +75,14 @@ const Menu = ({ title }: { title: string }) => {
             ))}
           </Box>
         </Box>
-        <Box p={8} w="full" flex={0.7} overflowY="auto">
+        <Box
+          p={8}
+          w="full"
+          flex={0.7}
+          overflowY="auto"
+          h={"100vh"}
+          marginBottom={10}
+        >
           <Box
             w="full"
             display="flex"
@@ -83,6 +94,10 @@ const Menu = ({ title }: { title: string }) => {
             </Button>
           </Box>
           {url === "Products" && <Products />}
+          {url === "Services" && <Services />}
+          {url === "Extras" && <Extras />}
+          {url === "Support" && <Support />}
+          {url === "About us" && <About />}
         </Box>
       </Box>
     </Container>
