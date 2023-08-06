@@ -155,7 +155,7 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
                                   </h2>
                                   <AccordionPanel pb={2}>
                                     {item?.subContent?.map((sub) => (
-                                      <Link href={`${sub.link}`}>
+                                      <Link key={sub.id} href={`${sub.link}`}>
                                         <Text
                                           fontSize={15}
                                           color="#000"
