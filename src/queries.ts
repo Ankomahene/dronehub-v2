@@ -162,3 +162,27 @@ export const storyQuery = groq`
   industryVertical
 }
 `;
+
+export const privacyPolicyQuery = groq`
+*[_type == "policies"][0] {
+  privacyPolicy,
+}
+`;
+
+export const afterSalesPolicyQuery = groq`
+*[_type == "policies"][0] {
+  afterSalesPolicy,
+}
+`;
+
+export const warrantyPolicyQuery = groq`
+*[_type == "policies"][0] {
+  warrantyPolicy,
+}
+`;
+
+export const termsOfUseQuery = groq`
+*[_type == "policies"][0] {
+  termsOfUse,
+}
+`;

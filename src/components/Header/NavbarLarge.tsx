@@ -8,8 +8,6 @@ import { INavItem } from "../../models/app";
 import { Button } from "../Buttons/Button";
 import styles from "./Header.module.scss";
 import { getHeaderStyles } from "./_styles";
-import { Popover } from "antd";
-import Menu from "./Menu";
 
 interface NavbarLargeProps {
   navItems: INavItem[];

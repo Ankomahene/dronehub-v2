@@ -69,7 +69,7 @@ export const OurServicesData = [
     description: 'Get expert advice for the best drone experience.',
     link: '/services/drone-consulting',
     imageUrl:
-      'https://res.cloudinary.com/djmx11b6s/image/upload/v1675907404/donehub-assets/Accesories/illus-13_tarlur.png',
+      'https://res.cloudinary.com/djmx11b6s/image/upload/v1690918126/donehub-assets/services/Group_ixx10u.png',
   },
   {
     title: 'Drone Repair',

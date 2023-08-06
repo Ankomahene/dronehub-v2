@@ -20,7 +20,7 @@ export const MainBanner = ({ bannerData }: MainBannerProps) => {
         zIndex={2}
         color="gray.100"
         px="3rem"
-        display={{ base: 'none', lg: 'flex' }}
+        display={{ base: 'none', xl: 'flex' }}
       >
         <Heading size="2xl" textAlign="center" mx="2rem" my="2rem">
           {bannerData.heading}

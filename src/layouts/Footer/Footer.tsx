@@ -124,22 +124,34 @@ export const Footer = () => {
               w={{ base: '100%', md: '60%' }}
             >
               <NextLink
-                href="/terms-and-conditions"
+                href="/policies/terms-of-use"
                 passHref
                 className="py-2 link-item"
               >
                 <Text {...linkTextStyles}>Terms and Conditions </Text>
               </NextLink>
 
-              <NextLink href="/privacy" passHref className="py-2">
+              <NextLink
+                href="/policies/privacy-policy"
+                passHref
+                className="py-2"
+              >
                 <Text {...linkTextStyles}>Privacy Policy</Text>
               </NextLink>
 
-              <NextLink href="/after-sales-policies" passHref className="py-2">
+              <NextLink
+                href="/policies/after-sales-policy"
+                passHref
+                className="py-2"
+              >
                 <Text {...linkTextStyles}>After Sales Policy</Text>
               </NextLink>
 
-              <NextLink href="/warranty-policy" passHref className="py-2">
+              <NextLink
+                href="/policies/warranty-policy"
+                passHref
+                className="py-2"
+              >
                 <Text {...linkTextStyles}>Warranty Policy</Text>
               </NextLink>
             </Flex>

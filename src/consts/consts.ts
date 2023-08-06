@@ -36,3 +36,36 @@ export const services: IAllServices = {
     link: '/services/drone-applied-research',
   },
 };
+
+export const policyItems = [
+  {
+    title: 'Overview',
+    name: 'overview',
+    link: '/policies',
+    color: '#D600E8',
+  },
+  {
+    title: 'Terms of Use',
+    name: 'terms-of-use',
+    link: '/policies/terms-of-use',
+    color: '#D600E8',
+  },
+  {
+    title: 'Privacy Policy',
+    name: 'privacy-policy',
+    link: '/policies/privacy-policy',
+    color: '#0645A4',
+  },
+  {
+    title: 'After Sales Policy',
+    name: 'after-sales-policy',
+    link: '/policies/after-sales-policy',
+    color: '#011127',
+  },
+  {
+    title: 'Warranty Policy',
+    name: 'warranty-policy',
+    link: '/policies/warranty-policy',
+    color: '#FFAA00',
+  },
+];

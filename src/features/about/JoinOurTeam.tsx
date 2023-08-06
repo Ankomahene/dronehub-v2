@@ -17,10 +17,12 @@ import {
   useDisclosure,
   useToast,
 } from '@chakra-ui/react';
+import emailjs from '@emailjs/browser';
 import { FormEvent, useRef, useState } from 'react';
 import { BiChevronRight } from 'react-icons/bi';
 import { IconButton } from '../../components';
 import { IndustrySelect } from '../../components/Newsletter/IndustrySelect';
+import { mainPublicKey, mainServiceId } from '../../consts';
 
 interface ModalProps {
   btnLabel: string;
@@ -33,13 +35,59 @@ export function JoinOurTeamModal({ btnLabel, btnStyle }: ModalProps) {
   const toast = useToast();
   const form = useRef<any>();
 
+  function alertError(title: string) {
+    toast({
+      title,
+      status: 'error',
+    });
+  }
+
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    toast({
-      title: 'FormSubmitted Successfully',
-      status: 'success',
-    });
+    const formData = new FormData(e.target as HTMLFormElement);
+    const formProps = Object.fromEntries(formData);
+
+    const { email = '', firstName, lastName, phone, message } = formProps;
+
+    const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i;
+
+    if (!email || !emailPattern.test(email as string)) {
+      alertError('Enter valid email');
+    }
+
+    if (!industry) {
+      alertError('Please select Interested Role');
+    }
+
+    emailjs
+      .send(
+        mainServiceId,
+        'template_vc3a99a',
+        {
+          title: btnLabel,
+          email,
+          firstName,
+          lastName,
+          industry,
+          phone,
+          message,
+        },
+        mainPublicKey
+      )
+      .then(
+        (_res) => {
+          toast({
+            title: 'Request Submitted Successfully',
+            status: 'success',
+          });
+          onClose();
+        },
+        (_err) => {
+          const title = 'Fail to Submit Request. Please try again!';
+          alertError(title);
+        }
+      );
   };
 
   return (
@@ -103,17 +151,12 @@ export function JoinOurTeamModal({ btnLabel, btnStyle }: ModalProps) {
                 <HStack spacing={8} my="1rem">
                   <FormControl>
                     <FormLabel>Your Message</FormLabel>
-                    <Textarea placeholder="Kindly type here" />
+                    <Textarea placeholder="Kindly type here" name="message" />
                   </FormControl>
                 </HStack>
 
                 <Box textAlign="right" my="1rem">
-                  <Button
-                    type="submit"
-                    bgColor="brand.blue"
-                    color="gray.100"
-                    onClick={onClose}
-                  >
+                  <Button type="submit" bgColor="brand.blue" color="gray.100">
                     Submit
                   </Button>
                 </Box>

@@ -34,7 +34,7 @@ export const SolutionsSlider = ({ items }: { items: IDroneProperties[] }) => {
               align="center"
               h="100%"
               bgColor="white"
-              _hover={{ bgColor: 'brand.blue' }}
+              _hover={{ bgColor: { base: 'transparent', lg: 'brand.blue' } }}
               className={styles.solutionsSlide}
               transition="all .4s"
             >
@@ -47,8 +47,9 @@ export const SolutionsSlider = ({ items }: { items: IDroneProperties[] }) => {
                 <Box
                   textAlign="center"
                   className={styles.sliderDetails}
+                  display={{ base: 'block', lg: 'none' }}
                   mb="1rem"
-                  color="gray.100"
+                  color={{ base: 'gray.700', lg: 'gray.100' }}
                 >
                   <Text fontSize="lg" fontWeight="bold">
                     {item.name}
@@ -58,9 +59,13 @@ export const SolutionsSlider = ({ items }: { items: IDroneProperties[] }) => {
                     btn1Link={`/products/${item.slug}`}
                     containerStyles={{ justify: 'center' }}
                     btn1Styles={{
-                      borderColor: 'gray.100',
-                      color: 'gray.100',
+                      borderColor: { base: 'brand.blue', lg: 'gray.100' },
+                      color: { base: 'brand.blue', lg: 'gray.100' },
                       _active: { bg: 'none' },
+                    }}
+                    btn2Styles={{
+                      bgColor: { base: 'brand.blue', lg: 'white' },
+                      color: { base: 'white', lg: 'brand.blue' },
                     }}
                   />
                 </Box>

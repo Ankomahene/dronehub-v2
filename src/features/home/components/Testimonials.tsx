@@ -129,12 +129,13 @@ export const TestimonyCard = ({
     pos={{ base: 'relative' }}
   >
     <Box
-      bg="white"
+      bg="gray.100"
       color="gray.900"
       p={{ base: '1rem', lg: '3rem' }}
       w="400px"
       mb={{ base: '-8rem', lg: '0' }}
       pos="relative"
+      borderRadius={5}
     >
       <Text
         fontSize={{ base: '0.8rem', md: '1rem', lg: '1.2rem' }}

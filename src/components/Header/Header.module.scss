@@ -2,12 +2,9 @@
   color: white;
 }
 
-.linkStyle {
-  padding: 16px, 35px, 16px, 35px;
-}
-
 .linkStyle:hover {
-  background-color: #d8d8d8;
-  border-radius: 5px;
+  background-color: #c4c4c433;
+  border-radius: 4px;
   transition: background-color 0.3s ease;
+  padding: 4px 5px 4px 5px;
 }

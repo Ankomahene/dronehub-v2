@@ -20,7 +20,7 @@ export const BannerSlider = ({ featuredProducts }: BannerSlider) => {
     loop: true,
     speed: 3000,
     autoplay: {
-      delay: 5000,
+      delay: 2000,
       disableOnInteraction: true,
     },
   };
