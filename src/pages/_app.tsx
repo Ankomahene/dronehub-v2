@@ -15,6 +15,7 @@ import 'swiper/css/scrollbar';
 import { Header } from '../components/Header/Header';
 import { DronesContextProvider } from '../context/dronesContext';
 import { DataFetching } from '../components/DataFetching';
+import Meta from '../components/Meta/Meta';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <DronesContextProvider>
+        <Meta />
         <DataFetching />
         <Header />
         <Component {...pageProps} />
