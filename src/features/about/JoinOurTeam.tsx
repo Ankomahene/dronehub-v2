@@ -81,6 +81,7 @@ export function JoinOurTeamModal({ btnLabel, btnStyle }: ModalProps) {
             title: 'Request Submitted Successfully',
             status: 'success',
           });
+          onClose();
         },
         (_err) => {
           const title = 'Fail to Submit Request. Please try again!';
