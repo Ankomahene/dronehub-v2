@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Box, Divider, Text, Flex, Spacer } from "@chakra-ui/react";
-import Image from "next/image";
+import { Container, Box, Divider, Text, Flex, Image } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { v4 as uid } from "uuid";
@@ -123,19 +122,25 @@ const industrial = [
 const Services = () => {
   return (
     <Box w="full" marginBottom={8}>
-      <Flex justifyContent="space-evenly" alignItems="center">
+      <Flex gap={24}>
         <Box>
           <Image
-            src={require("/public/assets/images/menus/Services/services.png")}
+            src={
+              "https://res.cloudinary.com/djp5oy3ri/image/upload/v1691282542/dronehub/services/zsdznym3ngwzrtif9xde.png"
+            }
             width={190}
-            height={120}
             alt="consumer"
           />
           <Text paddingY={1} fontSize={18} textAlign="center" fontWeight="bold">
             Services
           </Text>
           <Box>
-            <Text paddingY={1} color="#979797" fontSize="14px">
+            <Text
+              paddingY={1}
+              color="#979797"
+              textAlign="center"
+              fontSize="14px"
+            >
               Customised and reliable support solutions
             </Text>
             <Box>
@@ -143,15 +148,17 @@ const Services = () => {
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
-                      display="flex"
-                      gap={3}
-                      alignItems="center"
+                      _hover={{
+                        color: "rgba(6, 69, 164, 1)",
+                      }}
+                      paddingTop={"8px"}
+                      paddingRight={"17px"}
+                      paddingBottom={"8px"}
+                      paddingLeft={"17px"}
                       className={`${styles.linkStyle}`}
                       transition="all .3s"
                     >
-                      <Text fontSize={18} color="#000">
-                        {item.name}
-                      </Text>
+                      <Text fontSize={18}>{item.name}</Text>
                     </Box>
                   </Link>
                 </Box>
@@ -163,8 +170,9 @@ const Services = () => {
         <Box>
           <Image
             width={120}
-            height={120}
-            src={require("/public/assets/images/menus/Services/Icon 256_256 1.png")}
+            src={
+              "https://res.cloudinary.com/djp5oy3ri/image/upload/v1691282531/dronehub/services/f879fdq7zybvjxsc6ewu.png"
+            }
             alt="software"
           />
 
@@ -172,7 +180,12 @@ const Services = () => {
             Software
           </Text>
           <Box>
-            <Text paddingY={1} color="#979797" fontSize="14px">
+            <Text
+              paddingY={1}
+              color="#979797"
+              textAlign="center"
+              fontSize="14px"
+            >
               Drone software solutions optimized for your project
             </Text>
             <Box>
@@ -180,15 +193,17 @@ const Services = () => {
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
-                      display="flex"
-                      gap={3}
-                      alignItems="center"
+                      _hover={{
+                        color: "rgba(6, 69, 164, 1)",
+                      }}
+                      paddingTop={"8px"}
+                      paddingRight={"17px"}
+                      paddingBottom={"8px"}
+                      paddingLeft={"17px"}
                       className={`${styles.linkStyle}`}
                       transition="all .3s"
                     >
-                      <Text fontSize={18} color="#000">
-                        {item.name}
-                      </Text>
+                      <Text fontSize={18}>{item.name}</Text>
                     </Box>
                   </Link>
                 </Box>
@@ -201,7 +216,9 @@ const Services = () => {
           <Image
             width={200}
             height={120}
-            src={require("/public/assets/images/menus/Services/industrial.png")}
+            src={
+              "https://res.cloudinary.com/djp5oy3ri/image/upload/v1691282540/dronehub/services/pwecbmji9piq5l1awfpl.png"
+            }
             alt="consumer"
           />
 
@@ -209,7 +226,7 @@ const Services = () => {
             Industrial Solutions
           </Text>
           <Box>
-            <Text paddingY={1} color="#979797" fontSize={13}>
+            <Text paddingY={1} color="#979797" textAlign="center" fontSize={13}>
               New generation drone solutions for your line of work
             </Text>
             <Box>
@@ -217,15 +234,17 @@ const Services = () => {
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
-                      display="flex"
-                      gap={3}
-                      alignItems="center"
+                      _hover={{
+                        color: "rgba(6, 69, 164, 1)",
+                      }}
+                      paddingTop={"8px"}
+                      paddingRight={"17px"}
+                      paddingBottom={"8px"}
+                      paddingLeft={"17px"}
                       className={`${styles.linkStyle}`}
                       transition="all .3s"
                     >
-                      <Text fontSize={17} color="#000">
-                        {item.name}
-                      </Text>
+                      <Text fontSize={17}>{item.name}</Text>
                     </Box>
                   </Link>
                 </Box>
@@ -237,7 +256,7 @@ const Services = () => {
         <Box>Enterprise</Box> */}
       </Flex>
       <Divider />
-      <Box paddingY={4} paddingLeft={20} marginBottom={20}>
+      <Box paddingY={4} paddingLeft={"17px"} marginBottom={20}>
         <Link href="/services">
           <Box display="flex" gap={3} color="#0645A4" alignItems="center">
             <Text fontSize={20}>View all services</Text>

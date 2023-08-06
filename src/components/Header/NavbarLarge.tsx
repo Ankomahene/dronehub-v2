@@ -18,6 +18,15 @@ interface NavbarLargeProps {
 export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { x, y } = useWindowScroll();
+  const [open, setOpen] = useState(false);
+
+  const hide = () => {
+    setOpen(false);
+  };
+
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+  };
 
   useEffect(() => {
     if (y > 100) {
@@ -55,10 +64,18 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
               overlayStyle={{
                 borderRadius: 0,
               }}
+              arrow={false}
               overlayInnerStyle={{
                 padding: 0,
               }}
-              content={<Menu title={navItem?.name} />}
+              content={
+                <Menu
+                  title={navItem?.name}
+                  handleClose={() => {
+                    hide();
+                  }}
+                />
+              }
             >
               <NextLink
                 key={navItem.id}
@@ -72,72 +89,6 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
               </NextLink>
             </Popover>
           ))}
-          {/* <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/products"
-              passHref
-            >
-              Products
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/products"
-              passHref
-            >
-              Services
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/services"
-              passHref
-            >
-              Products
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/deals"
-              passHref
-            >
-              Deals
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/support"
-              passHref
-            >
-              Support
-            </NextLink>
-          </Popover>
-          <Popover content={Menu}>
-            <NextLink
-              className={`nav-item mx-3 ${
-                isScrolled ? "text-dark" : "text-light"
-              }`}
-              href="/about"
-              passHref
-            >
-              About us
-            </NextLink>
-          </Popover> */}
         </Box>
         <Flex gap="10px">
           <Link href="/consumer">

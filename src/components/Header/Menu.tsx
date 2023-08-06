@@ -36,7 +36,13 @@ const links = [
   },
 ];
 
-const Menu = ({ title }: { title: string }) => {
+const Menu = ({
+  title,
+  handleClose,
+}: {
+  title: string;
+  handleClose: () => void;
+}) => {
   const [url, setUrl] = useState(title);
   return (
     <Container as="nav" p="0px" minW="100vw" minH="90vh">
@@ -45,15 +51,15 @@ const Menu = ({ title }: { title: string }) => {
           display="flex"
           color="#fff"
           bg="#0645A4"
-          flex={0.3}
+          flex={0.2}
           w="full"
           flexDir="column"
           minHeight="100vh"
           alignItems="center"
-          paddingY={20}
+          paddingY={3}
         >
           <Box>
-            {links.map((item) => (
+            {/* {links.map((item) => (
               <Box key={item.id}>
                 <button onClick={() => setUrl(item.name)}>
                   <Text
@@ -72,27 +78,36 @@ const Menu = ({ title }: { title: string }) => {
                   </Text>
                 </button>
               </Box>
-            ))}
+            ))} */}
+            <Box padding={3} display={"flex"} alignItems={"center"}>
+              <Text fontSize="32px" lineHeight={10} textAlign="left">
+                {title === "Products"
+                  ? `Explore ${title}`
+                  : title === "Services"
+                  ? `Explore ${title}`
+                  : title}
+              </Text>
+            </Box>
           </Box>
         </Box>
         <Box
           p={8}
           w="full"
-          flex={0.7}
+          flex={0.8}
           overflowY="auto"
           h={"100vh"}
           marginBottom={10}
         >
-          <Box
+          {/* <Box
             w="full"
             display="flex"
             justifyContent="flex-end"
             alignItems="flex-end"
           >
-            <Button variant="unstyled">
+            <Button variant="unstyled" onClick={handleClose}>
               <CloseIcon w={6} h={6} color="#0645A4" />
             </Button>
-          </Box>
+          </Box> */}
           {url === "Products" && <Products />}
           {url === "Services" && <Services />}
           {url === "Extras" && <Extras />}

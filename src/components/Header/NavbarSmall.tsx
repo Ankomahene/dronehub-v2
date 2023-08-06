@@ -29,6 +29,7 @@ import { INavItem } from "../../models/app";
 import { Button } from "../Buttons/Button";
 import styles from "./Header.module.scss";
 import { getHeaderStyles } from "./_styles";
+import SupportM from "./MenuItems/SupportM";
 
 interface NavbarLargeProps {
   navItems: INavItem[];
@@ -136,39 +137,48 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
                           <Box key={item.id}>
                             {item?.subContent ? (
                               <Accordion allowMultiple key={item.id}>
-                                {item?.subContent?.map((sub) => (
-                                  <AccordionItem key={sub.id} paddingY={2}>
-                                    <h2>
-                                      <AccordionButton
-                                        _expanded={{
-                                          color: "#0645A4",
-                                        }}
-                                      >
-                                        <Box
-                                          as="span"
-                                          flex="1"
-                                          textAlign="left"
+                                <AccordionItem paddingY={2}>
+                                  <h2>
+                                    <AccordionButton
+                                      _expanded={{
+                                        color: "#0645A4",
+                                      }}
+                                    >
+                                      <Box as="span" flex="1" textAlign="left">
+                                        <Text fontWeight="bold" fontSize={18}>
+                                          {item.name}
+                                        </Text>
+                                      </Box>
+                                      <AccordionIcon />
+                                    </AccordionButton>
+                                  </h2>
+                                  <AccordionPanel pb={2}>
+                                    {item?.subContent?.map((sub) => (
+                                      <Link href={`${sub.link}`}>
+                                        <Text
+                                          fontSize={15}
+                                          color="#000"
+                                          paddingY={2}
                                         >
-                                          <Text fontWeight="bold" fontSize={18}>
-                                            {sub.name}
-                                          </Text>
-                                        </Box>
-                                        <AccordionIcon />
-                                      </AccordionButton>
-                                    </h2>
-                                    <AccordionPanel pb={2}>sub</AccordionPanel>
-                                  </AccordionItem>
-                                ))}
+                                          {sub.name}
+                                        </Text>
+                                      </Link>
+                                    ))}
+                                  </AccordionPanel>
+                                </AccordionItem>
                               </Accordion>
                             ) : (
-                              <Link href={`${item.link}`}>
-                                <Text fontSize={12} color="#000" paddingY={2}>
-                                  {item.name}
-                                </Text>
-                              </Link>
+                              <>
+                                <Link href={`${item.link}`}>
+                                  <Text fontSize={15} color="#000" paddingY={2}>
+                                    {item.name}
+                                  </Text>
+                                </Link>
+                              </>
                             )}
                           </Box>
                         ))}
+                        {navItem.name === "Support" && <SupportM />}
                       </AccordionPanel>
                     </AccordionItem>
                   ))}

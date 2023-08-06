@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { Container, Box, Divider, Text, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Box, Divider, Text, Flex, Image } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { v4 as uid } from "uuid";
@@ -54,12 +53,13 @@ const feedback = [
 const Extras = () => {
   return (
     <Box w="full" marginBottom={8}>
-      <Flex alignItems="center">
+      <Flex gap={24}>
         <Box flex={0.5}>
           <Image
-            src={require("/public/assets/images/menus/Blog/Maintenance.png")}
+            src={
+              "https://res.cloudinary.com/djp5oy3ri/image/upload/v1691282458/dronehub/blog/jvalvcpellxncaip0sk3.png"
+            }
             width={240}
-            height={140}
             alt="blog"
           />
 
@@ -86,8 +86,9 @@ const Extras = () => {
         <Box flex={0.5}>
           <Image
             width={240}
-            height={140}
-            src={require("/public/assets/images/menus/Blog/Maintenance.png")}
+            src={
+              "https://res.cloudinary.com/djp5oy3ri/image/upload/v1691282458/dronehub/blog/jvalvcpellxncaip0sk3.png"
+            }
             alt="feedback"
           />
 

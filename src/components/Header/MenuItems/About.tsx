@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { Container, Box, Divider, Text, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Box, Divider, Text, Flex, Image } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { v4 as uid } from "uuid";
@@ -35,8 +34,9 @@ const About = (props: Props) => {
         <Box>
           <Image
             width={226}
-            height={84}
-            src={require("/public/assets/images/menus/About/Maintenance.png")}
+            src={
+              "https://res.cloudinary.com/djp5oy3ri/image/upload/v1691282583/dronehub/about/sksi1iwdobuebzkddh5b.png"
+            }
             alt="consumer"
           />
 
@@ -45,10 +45,29 @@ const About = (props: Props) => {
               {about.map((item) => (
                 <Box key={item.id} paddingY={2}>
                   <Box>
-                    <Text fontSize={17} color="#000" fontWeight="bold">
-                      {item.name}
-                    </Text>
-                    <Text paddingY={1} fontSize={13} color={"#979797"}>
+                    <Box
+                      paddingTop={"16px"}
+                      paddingRight={"17px"}
+                      paddingBottom={"16px"}
+                      paddingLeft={"35px"}
+                      borderRadius={4}
+                      backgroundColor={"rgba(216, 216, 216, 1)"}
+                    >
+                      <Text
+                        fontSize={18}
+                        fontWeight="bold"
+                        color={"rgba(6, 69, 164, 1)"}
+                      >
+                        {item.name}
+                      </Text>
+                    </Box>
+                    <Text
+                      paddingRight={"17px"}
+                      paddingLeft={"35px"}
+                      paddingY={3}
+                      fontSize={14}
+                      color={"#979797"}
+                    >
                       {item.description}
                     </Text>
                   </Box>
