@@ -142,3 +142,225 @@ export const repairProcess = [
     info: 'On completion of repair, you are required to pick up your drone after payment.',
   },
 ];
+
+export const blog = [
+  {
+    id: uid(),
+    name: 'Blog',
+    description:
+      'Get the latest news, tips, and guides for the best drone experience',
+    link: '/blog',
+  },
+  {
+    id: uid(),
+    name: 'Customer & Industry Stories',
+    description:
+      'Listen to stories of customers who trust us for all their drone needs',
+    link: '/blog#customer-stories',
+  },
+  {
+    id: uid(),
+    name: 'Safety & Regulations',
+    description: 'Vital information to fly your drones safely',
+    link: '/safety',
+  },
+];
+
+export const feedback = [
+  {
+    id: uid(),
+    name: 'Feedback',
+    description: 'Let us know what you think, we’d like to hear from you!',
+    link: '/feedback',
+  },
+  {
+    id: uid(),
+    name: 'Events',
+    description: 'Find out what’s happening at DroneHub',
+    link: '/events',
+  },
+  {
+    id: uid(),
+    name: 'Strategic Partnerships',
+    description:
+      'Collaboration and cooperation are essential for achieving sustainable value and innovation. Let us work together.',
+    link: '/strategic-partnership',
+  },
+];
+
+export const about = [
+  {
+    id: uid(),
+    name: 'Who We Are',
+    description: 'We are a drone technology products and solutions provider.',
+    link: '/about',
+  },
+  {
+    id: uid(),
+    name: 'Our Vision',
+    description:
+      'To be the most preferred drone products and solutions provider in Africa.',
+    link: '/about',
+  },
+  {
+    id: uid(),
+    name: 'Careers at Dronehub',
+    description: 'Join our dynamic team today.',
+    link: '/about',
+  },
+];
+
+export const professional = [
+  {
+    id: uid(),
+    name: 'Inspire Series',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Ronin Series',
+    link: '#',
+  },
+];
+
+export const enterprise = [
+  {
+    id: uid(),
+    name: 'Matrice Series',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Mavic Enterprise Series',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Phantom Enterprise Series',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Zenmuse Series',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Agras Series',
+    link: '#',
+  },
+];
+
+export const services = [
+  {
+    id: uid(),
+    name: 'Drone Repair',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Drone Rental',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Drone Consulting',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Drone Maintenance',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Drone Detection Solution',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Drone Applied Research',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Drone Education',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Custom Solutions',
+    link: '#',
+  },
+];
+
+export const software = [
+  {
+    id: uid(),
+    name: 'DJI Terra',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'DJI Flighthub',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'DJI Flight Simulator',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Ground Station Pro',
+    link: '#',
+  },
+];
+
+export const industrial = [
+  {
+    id: uid(),
+    name: 'Agriculture',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Construction',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Energy & Infrastructure',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Forestry',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Media',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Mining',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Public Safety',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Security',
+    link: '#',
+  },
+  {
+    id: uid(),
+    name: 'Surveying & Mapping',
+    link: '#',
+  },
+];

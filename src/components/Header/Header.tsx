@@ -1,165 +1,165 @@
-import { NavbarLarge } from "./NavbarLarge";
-import { v4 as uid } from "uuid";
-import { INavItem } from "../../models/app";
-import { NavbarSmall } from "./NavbarSmall";
-import { useMediaQuery } from "@chakra-ui/react";
+import { NavbarLarge } from './NavbarLarge';
+import { v4 as uid } from 'uuid';
+import { INavItem } from '../../models/app';
+import { NavbarSmall } from './NavbarSmall';
+import { useMediaQuery } from '@chakra-ui/react';
 
 const navItems: INavItem[] = [
   {
     id: uid(),
-    name: "Products",
-    link: "/products",
+    name: 'Products',
+    link: '/products',
     content: [
       {
         id: uid(),
-        name: "Consumer",
-        link: "#",
+        name: 'Consumer',
+        link: '/consumer',
       },
       {
         id: uid(),
-        name: "Professional",
-        link: "#",
+        name: 'Professional',
+        link: '/professional',
       },
       {
         id: uid(),
-        name: "Enterprise",
-        link: "#",
+        name: 'Enterprise',
+        link: '/enterprise',
       },
     ],
   },
   {
     id: uid(),
-    name: "Services",
-    link: "/services",
+    name: 'Services',
+    link: '/services',
     content: [
       {
         id: uid(),
-        name: "Services",
-        link: "#",
+        name: 'Services',
+        link: '/services',
         subContent: [
           {
             id: uid(),
-            name: "Drone Repairs",
-            link: "#",
+            name: 'Drone Repairs',
+            link: '/services/drone-repairs',
           },
           {
             id: uid(),
-            name: "Drone Maintenance",
-            link: "#",
+            name: 'Drone Maintenance',
+            link: '/services/drone-maintenance',
           },
           {
             id: uid(),
-            name: "Drone Software",
-            link: "#",
+            name: 'Drone Software',
+            link: '#',
           },
           {
             id: uid(),
-            name: "Drone Consulting",
-            link: "#",
+            name: 'Drone Consulting',
+            link: '/services/drone-consulting',
           },
           {
             id: uid(),
-            name: "Drone Detection",
-            link: "#",
+            name: 'Drone Detection',
+            link: '/services/drone-detection',
           },
           {
             id: uid(),
-            name: "Drone Rentals",
-            link: "#",
+            name: 'Drone Rentals',
+            link: '/services/drone-rentals',
           },
           {
             id: uid(),
-            name: "Drone Research",
-            link: "#",
+            name: 'Drone Research',
+            link: '/services/drone-applied-research',
           },
           {
             id: uid(),
-            name: "Drone Education",
-            link: "#",
+            name: 'Drone Education',
+            link: '/services/drone-education',
           },
           {
             id: uid(),
-            name: "Custom Solutions",
-            link: "#",
+            name: 'Custom Solutions',
+            link: '/services/custom-solutions',
           },
         ],
       },
       {
         id: uid(),
-        name: "Software Solutions",
-        link: "#",
+        name: 'Software Solutions',
+        link: '#',
         subContent: [
           {
             id: uid(),
-            name: "DJI Terra",
-            link: "#",
+            name: 'DJI Terra',
+            link: '#',
           },
           {
             id: uid(),
-            name: "DJI Flighthub",
-            link: "#",
+            name: 'DJI Flighthub',
+            link: '#',
           },
           {
             id: uid(),
-            name: "DJI Flight Simulator",
-            link: "#",
+            name: 'DJI Flight Simulator',
+            link: '#',
           },
           {
             id: uid(),
-            name: "Ground Station Pro",
-            link: "#",
+            name: 'Ground Station Pro',
+            link: '#',
           },
         ],
       },
       {
         id: uid(),
-        name: "Industrial Solutions",
-        link: "#",
+        name: 'Industrial Solutions',
+        link: '/industries',
         subContent: [
           {
             id: uid(),
-            name: "Agriculture",
-            link: "#",
+            name: 'Agriculture',
+            link: '/industries/agriculture',
           },
           {
             id: uid(),
-            name: "Construction",
-            link: "#",
+            name: 'Construction',
+            link: '/industries/construction',
           },
           {
             id: uid(),
-            name: "Energy & Infrastructure",
-            link: "#",
+            name: 'Energy & Infrastructure',
+            link: '/industries/energy',
           },
           {
             id: uid(),
-            name: "Forestry",
-            link: "#",
+            name: 'Forestry',
+            link: '/industries/forestry',
           },
           {
             id: uid(),
-            name: "Media",
-            link: "#",
+            name: 'Media',
+            link: '/industries/media',
           },
           {
             id: uid(),
-            name: "Mining",
-            link: "#",
+            name: 'Mining',
+            link: '/industries/mining',
           },
           {
             id: uid(),
-            name: "Public Safety",
-            link: "#",
+            name: 'Public Safety',
+            link: '/industries/public-safety',
           },
           {
             id: uid(),
-            name: "Security",
-            link: "#",
+            name: 'Security',
+            link: '/industries/security',
           },
           {
             id: uid(),
-            name: "Surveying",
-            link: "#",
+            name: 'Surveying',
+            link: '/industries/surveying',
           },
         ],
       },
@@ -167,40 +167,40 @@ const navItems: INavItem[] = [
   },
   {
     id: uid(),
-    name: "Deals",
-    link: "/deals",
+    name: 'Deals',
+    link: '/deals',
   },
   {
     id: uid(),
-    name: "Support",
-    link: "/support",
+    name: 'Support',
+    link: '/support',
   },
   {
     id: uid(),
-    name: "About us",
-    link: "/about",
+    name: 'About us',
+    link: '/about',
     content: [
       {
         id: uid(),
-        name: "Who we are",
-        link: "/about",
+        name: 'Who we are',
+        link: '/about',
       },
       {
         id: uid(),
-        name: "Our vision",
-        link: "/about",
+        name: 'Our vision',
+        link: '/about',
       },
       {
         id: uid(),
-        name: "Careers at Dronehub",
-        link: "/about",
+        name: 'Careers at Dronehub',
+        link: '/about',
       },
     ],
   },
 ];
 
 export const Header = () => {
-  const [isLarge] = useMediaQuery("(min-width: 1024px)");
+  const [isLarge] = useMediaQuery('(min-width: 1024px)');
 
   return (
     <>

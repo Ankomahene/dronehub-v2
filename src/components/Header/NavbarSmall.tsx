@@ -18,18 +18,18 @@ import {
   AccordionPanel,
   AccordionIcon,
   Text,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import NextLink from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { MdShortText } from "react-icons/md";
-import { useWindowScroll } from "react-use";
-import { logoDark, logoLight } from "../../consts";
-import { INavItem } from "../../models/app";
-import { Button } from "../Buttons/Button";
-import styles from "./Header.module.scss";
-import { getHeaderStyles } from "./_styles";
-import SupportM from "./MenuItems/SupportM";
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import NextLink from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import { MdShortText } from 'react-icons/md';
+import { useWindowScroll } from 'react-use';
+import { logoDark, logoLight } from '../../consts';
+import { INavItem } from '../../models/app';
+import { Button } from '../Buttons/Button';
+import styles from './Header.module.scss';
+import { getHeaderStyles } from './_styles';
+import SupportMobile from './MenuItems/SupportMobile';
 
 interface NavbarLargeProps {
   navItems: INavItem[];
@@ -53,38 +53,38 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
 
   return (
     <Box
-      as="nav"
+      as='nav'
       {...getHeaderStyles(isScrolled)}
       className={`navbar fixed-top ${styles.navigationBar}`}
-      transition="all .3s"
+      transition='all .3s'
     >
       <Flex
-        px="1rem"
-        w="90%"
-        m="auto"
-        py="0.5rem"
-        justify="space-between"
-        className="container-fluid"
+        px='1rem'
+        w='90%'
+        m='auto'
+        py='0.5rem'
+        justify='space-between'
+        className='container-fluid'
       >
-        <NextLink className="navbar-brand" href="/" passHref>
-          <Image src={logoUrl} alt="logo" w="80px" />
+        <NextLink className='navbar-brand' href='/' passHref>
+          <Image src={logoUrl} alt='logo' w='80px' />
         </NextLink>
 
         <>
           <IconButton
-            aria-label="Hamburger"
+            aria-label='Hamburger'
             ref={btnRef}
-            fontSize="3xl"
-            variant="ghost"
-            _hover={{ fontSize: "4xl" }}
-            transition="all .3s"
+            fontSize='3xl'
+            variant='ghost'
+            _hover={{ fontSize: '4xl' }}
+            transition='all .3s'
             onClick={onOpen}
             icon={<MdShortText />}
           />
 
           <Drawer
             isOpen={isOpen}
-            placement="left"
+            placement='left'
             onClose={onClose}
             finalFocusRef={btnRef}
           >
@@ -92,41 +92,28 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
             <DrawerContent>
               <DrawerCloseButton />
               <DrawerHeader>
-                <NextLink className="navbar-brand" href="/" passHref>
+                <NextLink className='navbar-brand' href='/' passHref>
                   <Image
-                    src="assets/images/logo/logo-dark.png"
-                    alt="logo"
-                    w="70px"
+                    src='assets/images/logo/logo-dark.png'
+                    alt='logo'
+                    w='70px'
                   />
                 </NextLink>
               </DrawerHeader>
               <Divider />
 
               <DrawerBody>
-                {/* <Flex flexDir="column">
-                  {navItems.map((navItem) => (
-                    <NextLink
-                      key={navItem.id}
-                      className={`nav-item my-2 text-dark`}
-                      href={navItem.link}
-                      passHref
-                      onClick={onClose}
-                    >
-                      {navItem.name}
-                    </NextLink>
-                  ))}
-                </Flex> */}
                 <Accordion allowMultiple marginTop={10}>
                   {navItems.map((navItem) => (
                     <AccordionItem key={navItem.id} paddingY={4}>
                       <h2>
                         <AccordionButton
                           _expanded={{
-                            color: "#0645A4",
+                            color: '#0645A4',
                           }}
                         >
-                          <Box as="span" flex="1" textAlign="left">
-                            <Text fontWeight="bold" fontSize={18}>
+                          <Box as='span' flex='1' textAlign='left'>
+                            <Text fontWeight='bold' fontSize={18}>
                               {navItem.name}
                             </Text>
                           </Box>
@@ -142,11 +129,11 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
                                   <h2>
                                     <AccordionButton
                                       _expanded={{
-                                        color: "#0645A4",
+                                        color: '#0645A4',
                                       }}
                                     >
-                                      <Box as="span" flex="1" textAlign="left">
-                                        <Text fontWeight="bold" fontSize={18}>
+                                      <Box as='span' flex='1' textAlign='left'>
+                                        <Text fontWeight='bold' fontSize={18}>
                                           {item.name}
                                         </Text>
                                       </Box>
@@ -158,7 +145,7 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
                                       <Link key={sub.id} href={`${sub.link}`}>
                                         <Text
                                           fontSize={15}
-                                          color="#000"
+                                          color='#000'
                                           paddingY={2}
                                         >
                                           {sub.name}
@@ -171,7 +158,7 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
                             ) : (
                               <>
                                 <Link href={`${item.link}`}>
-                                  <Text fontSize={15} color="#000" paddingY={2}>
+                                  <Text fontSize={15} color='#000' paddingY={2}>
                                     {item.name}
                                   </Text>
                                 </Link>
@@ -179,7 +166,7 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
                             )}
                           </Box>
                         ))}
-                        {navItem.name === "Support" && <SupportM />}
+                        {navItem.name === 'Support' && <SupportMobile />}
                       </AccordionPanel>
                     </AccordionItem>
                   ))}
@@ -188,21 +175,21 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
 
               <DrawerFooter>
                 <Box>
-                  <Link href="/consumer">
+                  <Link href='/consumer'>
                     <Button
-                      title="Consumer Solutions"
-                      bg="brand.blue"
-                      color="gray.100"
-                      w="90%"
-                      mx="auto"
+                      title='Consumer Solutions'
+                      bg='brand.blue'
+                      color='gray.100'
+                      w='90%'
+                      mx='auto'
                       onClick={onClose}
                     />
                   </Link>
-                  <Link href="/business">
+                  <Link href='/business'>
                     <Button
-                      title="Enterprise Solutions"
-                      w="90%"
-                      mx="auto"
+                      title='Enterprise Solutions'
+                      w='90%'
+                      mx='auto'
                       onClick={onClose}
                     />
                   </Link>
@@ -215,6 +202,3 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
     </Box>
   );
 };
-function MutableRefObject<T>() {
-  throw new Error("Function not implemented.");
-}
