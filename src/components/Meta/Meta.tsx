@@ -3,7 +3,7 @@ import Head from 'next/head';
 const pageTitle = 'Dronehub Ghana';
 const description = 'Drones for everyday needs';
 const coverImageUrl =
-  'https://res.cloudinary.com/djmx11b6s/image/upload/v1677918284/donehub-assets/Mask_1_1_kdonef.png';
+  'https://res.cloudinary.com/djmx11b6s/image/upload/v1691422048/donehub-assets/dronehub_nt1tgy.png';
 
 const Meta = () => {
   return (
