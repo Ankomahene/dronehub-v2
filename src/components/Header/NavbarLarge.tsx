@@ -87,8 +87,13 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
           <Link href='/consumer'>
             <Button
               title='Consumer Solutions'
+              borderWidth={2}
               bg='transparent'
               color={isScrolled ? 'brand.blue' : 'gray.100'}
+              _hover={{
+                borderColor: 'rgba(216, 216, 216, 1)',
+                color: 'rgba(6, 69, 164, 1)',
+              }}
             />
           </Link>
           <Link href='/business'>
@@ -96,6 +101,10 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
               title='Enterprise Solutions'
               bg={isScrolled ? 'brand.blue' : 'white'}
               color={isScrolled ? 'gray.100' : 'brand.blue'}
+              _hover={{
+                color: 'rgba(6, 69, 164, 1)',
+                backgroundColor: 'rgba(216, 216, 216, 1)',
+              }}
             />
           </Link>
         </Flex>

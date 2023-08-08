@@ -64,6 +64,10 @@ export const Testimonials = () => {
                     title='Explore Drones'
                     bg='brand.blue'
                     color='gray.100'
+                    _hover={{
+                      color: 'rgba(6, 69, 164, 1)',
+                      backgroundColor: 'rgba(216, 216, 216, 1)',
+                    }}
                   />
                 </Link>
               </Box>
@@ -71,6 +75,7 @@ export const Testimonials = () => {
             <Swiper
               {...sliderSettings}
               style={{ width: '100%', height: '100%' }}
+              className='testimony-slider-gallery'
             >
               <SwiperSlide style={style}>
                 <TestimonyCard
@@ -139,16 +144,18 @@ export const TestimonyCard = ({
     >
       <Text
         fontSize={{ base: '0.8rem', md: '1rem', lg: '1.2rem' }}
-        w='90%'
+        w='100%'
         my='2rem'
         color='brand.blue'
+        fontWeight={'500'}
+        lineHeight={'35px'}
       >
         “{testimony}”
       </Text>
       <Text fontWeight='bold' fontSize={{ base: 'lg', lg: '2xl' }}>
         {name}
       </Text>
-      <Text fontSize={{ base: '0.8rem', lg: '1rem' }}>
+      <Text fontSize={{ base: '0.8rem', lg: '1rem' }} fontWeight={'500'}>
         {position}, <br /> {company}
       </Text>
     </Box>

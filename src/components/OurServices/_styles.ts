@@ -5,8 +5,9 @@ export const cardStyles: FlexProps = {
   overflow: 'hidden',
   flexDir: 'column',
   bg: 'white',
-  h: '26rem',
-  maxW: '24rem',
+  h: '389px',
+  w: '542px',
+
   boxSizing: 'border-box',
   shadow: 'md',
   my: '0.5rem',
