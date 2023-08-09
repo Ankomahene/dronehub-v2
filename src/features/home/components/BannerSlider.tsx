@@ -26,46 +26,54 @@ export const BannerSlider = ({ featuredProducts }: BannerSlider) => {
   };
 
   return (
-    <Box w="100%" h="100%">
+    <Box w='100%' h='100%'>
       <Swiper
         {...sliderSettings}
         style={{ width: '100%', height: '100%' }}
-        className="main-dh-swiper"
+        className='main-dh-swiper'
       >
         {featuredProducts.map((product) => (
           <SwiperSlide
             key={uid()}
             style={{
               padding: '0.5rem',
-              minWidth: '300px',
-              maxWidth: '700px',
+              minWidth: '200px',
+              maxWidth: '450px',
               boxSizing: 'border-box',
             }}
           >
             <Flex
-              w="100%"
-              h="100%"
-              justify="center"
-              align="center"
-              flexDir="column"
+              w='100%'
+              h='100%'
+              justify='center'
+              align='center'
+              flexDir='column'
             >
               <Image
-                boxSize={{ base: '250px', lg: '300px' }}
+                className='main-dh-image'
+                boxSize={{ base: '80%', lg: '100%' }}
                 src={product.imageUrl}
                 alt={product.name}
               />
 
               <Text
-                fontSize={{ base: '1.5rem', lg: '2rem' }}
-                fontWeight="bold"
-                color="gray.100"
+                fontSize={{ base: '1.0rem', lg: '1.5rem' }}
+                fontWeight='bold'
+                color='gray.100'
+                textAlign='center'
+                className='main-dh-product-name'
               >
                 {product.name}
               </Text>
-              <Text color="gray.300" pb="1rem" textAlign="center">
+              <Text
+                className='main-dh-product-tagline'
+                color='gray.300'
+                pb='1rem'
+                textAlign='center'
+              >
                 {product.tagline}
               </Text>
-              <Box w="90%" mx="auto">
+              <Box w='90%' mx='auto' className='main-dh-product-btn'>
                 <ProductCTAButtons
                   btn1Link={`/products/${product.slug}`}
                   containerStyles={{ justify: 'center' }}
