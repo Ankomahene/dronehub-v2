@@ -40,7 +40,7 @@ export const Footer = () => {
         {/* ------ footer details starts here */}
         <Box w={{ base: '90%', lg: '80%' }} m='auto'>
           <Flex
-            my={{ base: '4rem', lg: '6rem' }}
+            mt={{ base: '4rem', lg: '6rem' }}
             flexDir={{ base: 'column', md: 'row' }}
           >
             <Box w={{ base: '100%', md: '20%' }} mx='15px' py='1rem'>
