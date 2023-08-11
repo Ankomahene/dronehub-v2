@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contact, OurServices } from '../../components';
+import { Contact } from '../../components';
 import { Categories } from '../../components/Categories';
 import { AllDeals, DealsCarousel } from '../../features';
 import { client } from '../../lib';
@@ -23,7 +23,7 @@ const DealsPage = ({ categories }: IDealsPageProps) => {
         )}
       />
       <AllDeals />
-      <OurServices />
+
       <Contact />
     </>
   );
