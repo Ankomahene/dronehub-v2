@@ -5,7 +5,7 @@ export const Gallery = () => {
   return (
     <Grid
       templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
-      templateRows={{ base: 'repeat(4, 1fr)', lg: 'repeat(1, 1fr)' }}
+      templateRows={{ base: 'repeat(2, 1fr)', lg: 'repeat(1, 1fr)' }}
       gap='10px'
       w='90%'
       mx='auto'

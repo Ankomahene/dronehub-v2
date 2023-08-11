@@ -7,33 +7,33 @@ const coverImage =
 export const SupportBanner = () => {
   return (
     <Flex
-      boxSizing="border-box"
-      p="2rem"
-      alignItems="center"
-      justify="center"
+      boxSizing='border-box'
+      p='2rem'
+      alignItems='center'
+      justify='center'
       minH={{ base: '60vh', sm: '80vh', lg: '90vh' }}
       bg={`center / cover no-repeat url(${coverImage})`}
-      boxShadow="inset 0 0 0 2000px rgba(0, 0, 0, 0.6)"
-      flexDir="column"
+      boxShadow='inset 0 0 0 2000px rgba(0, 0, 0, 0.6)'
+      flexDir='column'
     >
       <Heading
         size={{ base: 'lg', lg: 'xl' }}
-        maxW="650px"
-        mx="auto"
-        color="gray.100"
-        textAlign="center"
+        maxW='650px'
+        mx='auto'
+        color='gray.100'
+        textAlign='center'
       >
         Welcome to Dronehub Support
       </Heading>
       <Text
         fontSize={{ base: 'lg', lg: 'xl' }}
-        py="0.5rem"
-        maxW="650px"
-        mx="auto"
-        color="gray.100"
-        textAlign="center"
+        py='0.5rem'
+        maxW='650px'
+        mx='auto'
+        color='gray.100'
+        textAlign='center'
       >
-        Creating endless possibilities for you
+        We are here to guide you through having your best drone experience.
       </Text>
     </Flex>
   );
