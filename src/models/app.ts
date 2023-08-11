@@ -116,9 +116,6 @@ export type Service =
   | 'education'
   | 'consulting'
   | 'rental'
-  | 'maintenance'
-  | 'detection'
-  | 'custom'
   | 'research';
 
 export type IAllServices = {
