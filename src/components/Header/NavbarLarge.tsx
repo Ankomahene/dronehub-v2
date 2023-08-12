@@ -63,11 +63,13 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
               key={navItem.id}
               overlayStyle={{
                 borderRadius: 0,
+                margin: 30,
               }}
               arrow={false}
               overlayInnerStyle={{
                 padding: 0,
               }}
+              placement='bottom'
               content={<Menu title={navItem?.name} />}
             >
               <NextLink

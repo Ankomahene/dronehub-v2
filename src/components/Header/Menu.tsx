@@ -9,7 +9,7 @@ import About from './MenuItems/About';
 const Menu = ({ title }: { title: string }) => {
   const [url, setUrl] = useState(title);
   return (
-    <Container as='nav' p='0px' minW='100vw' minH='90vh'>
+    <Container as='nav' p='0px' minW='100vw' minH='80vh'>
       <Box display='flex' h='full' gap={3} overflow='auto'>
         <Box
           display='flex'
@@ -18,7 +18,7 @@ const Menu = ({ title }: { title: string }) => {
           flex={0.2}
           w='full'
           flexDir='column'
-          minHeight='100vh'
+          h='100vh'
           alignItems='center'
           paddingY={3}
         >
