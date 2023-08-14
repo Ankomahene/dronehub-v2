@@ -9,16 +9,26 @@ import About from './MenuItems/About';
 const Menu = ({ title }: { title: string }) => {
   const [url, setUrl] = useState(title);
   return (
-    <Container as='nav' p='0px' minW='100vw' minH='80vh'>
-      <Box display='flex' h='full' gap={3} overflow='auto'>
-        <Box
+    <Container
+      as='nav'
+      p='0px'
+      minW={{
+        base: '1127px',
+      }}
+      h={{
+        base: '3 b00px',
+        large: '400px',
+      }}
+    >
+      <Box display='flex' gap={3} overflowY={'auto'}>
+        {/* <Box
           display='flex'
           color='#fff'
           bg='#0645A4'
           flex={0.2}
           w='full'
           flexDir='column'
-          h='100vh'
+          h='full'
           alignItems='center'
           paddingY={3}
         >
@@ -33,18 +43,11 @@ const Menu = ({ title }: { title: string }) => {
               </Text>
             </Box>
           </Box>
-        </Box>
-        <Box
-          p={8}
-          w='full'
-          flex={0.8}
-          overflowY='auto'
-          h={'100vh'}
-          marginBottom={10}
-        >
+        </Box> */}
+        <Box p={8} w='full' flex={0.8} overflowY='auto'>
           {url === 'Products' && <Products />}
           {url === 'Services' && <Services />}
-          {url === 'Extras' && <Extras />}
+          {url === 'Deals' && null}
           {url === 'Support' && <Support />}
           {url === 'About us' && <About />}
         </Box>
