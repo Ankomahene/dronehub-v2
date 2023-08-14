@@ -1,6 +1,5 @@
 import { Box, Flex, Image } from '@chakra-ui/react';
 import Link from 'next/link';
-import { Popover } from 'antd';
 import NextLink from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { useWindowScroll } from 'react-use';
@@ -9,24 +8,20 @@ import { INavItem } from '../../models/app';
 import { Button } from '../Buttons/Button';
 import styles from './Header.module.scss';
 import { getHeaderStyles } from './_styles';
-import Menu from './Menu';
-
+import Products from './MenuItems/Products';
+import Services from './MenuItems/Services';
+import About from './MenuItems/About';
+import Support from './MenuItems/Support';
+import { motion } from 'framer-motion';
 interface NavbarLargeProps {
   navItems: INavItem[];
 }
 
 export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [subMenu, setSubMenu] = useState('none');
+  const [title, setTitle] = useState('');
   const { x, y } = useWindowScroll();
-  const [open, setOpen] = useState(false);
-
-  const hide = () => {
-    setOpen(false);
-  };
-
-  const handleOpenChange = (newOpen: boolean) => {
-    setOpen(newOpen);
-  };
 
   useEffect(() => {
     if (y > 100) {
@@ -49,7 +44,6 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
         px='1rem'
         w={{ base: '100%', lg: '95%', xl: '90%' }}
         m='auto'
-        py='0.5rem'
         justify='space-between'
         className='container-fluid'
       >
@@ -58,32 +52,80 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
         </NextLink>
 
         <Box color='white'>
-          {navItems.map((navItem) => (
-            <Popover
-              key={navItem.id}
-              overlayStyle={{
-                borderRadius: 0,
-                margin: 30,
-              }}
-              arrow={false}
-              overlayInnerStyle={{
-                padding: 0,
-              }}
-              placement='bottom'
-              content={<Menu title={navItem?.name} />}
-            >
-              <NextLink
-                key={navItem.id}
-                className={`nav-item mx-3 ${
-                  isScrolled ? 'text-dark' : 'text-light'
-                }`}
-                href={navItem.link}
-                passHref
-              >
-                {navItem.name}
-              </NextLink>
-            </Popover>
-          ))}
+          <NextLink
+            className={`nav-item mx-3 ${
+              isScrolled ? 'text-dark' : 'text-light'
+            }`}
+            href='/products'
+            passHref
+            onMouseEnter={() => {
+              setSubMenu('block');
+              setTitle('Products');
+            }}
+            onMouseLeave={() => {
+              setSubMenu('none');
+            }}
+          >
+            Products
+          </NextLink>
+
+          <NextLink
+            className={`nav-item mx-3 ${
+              isScrolled ? 'text-dark' : 'text-light'
+            }`}
+            href='/services'
+            passHref
+            onMouseEnter={() => {
+              setSubMenu('block');
+              setTitle('Services');
+            }}
+            onMouseLeave={() => {
+              setSubMenu('none');
+            }}
+          >
+            Services
+          </NextLink>
+          <NextLink
+            className={`nav-item mx-3 ${
+              isScrolled ? 'text-dark' : 'text-light'
+            }`}
+            href='/deals'
+            passHref
+          >
+            Deals
+          </NextLink>
+          <NextLink
+            className={`nav-item mx-3 ${
+              isScrolled ? 'text-dark' : 'text-light'
+            }`}
+            href='/support'
+            passHref
+            onMouseEnter={() => {
+              setSubMenu('block');
+              setTitle('Support');
+            }}
+            onMouseLeave={() => {
+              setSubMenu('none');
+            }}
+          >
+            Support
+          </NextLink>
+          <NextLink
+            className={`nav-item mx-3 ${
+              isScrolled ? 'text-dark' : 'text-light'
+            }`}
+            href='/about'
+            passHref
+            onMouseEnter={() => {
+              setSubMenu('block');
+              setTitle('About us');
+            }}
+            onMouseLeave={() => {
+              setSubMenu('none');
+            }}
+          >
+            About us
+          </NextLink>
         </Box>
         <Flex gap='10px'>
           <Link href='/consumer'>
@@ -111,6 +153,35 @@ export const NavbarLarge = ({ navItems }: NavbarLargeProps) => {
           </Link>
         </Flex>
       </Flex>
+
+      <Box
+        px='1rem'
+        w={{ base: '100%', lg: '95%', xl: '90%' }}
+        m='auto'
+        className='container-fluid'
+        onMouseEnter={() => setSubMenu('block')}
+        onMouseLeave={() => setSubMenu('none')}
+        zIndex={10}
+        left={'0%'}
+        top={'68%'}
+        right={'0%'}
+        color={'#000'}
+        position={'absolute'}
+        transition='all .3s ease-out'
+      >
+        <Box
+          className='menuItem'
+          w={'100vw'}
+          bg={'#fff'}
+          display={`${subMenu}`}
+          boxShadow={'lg'}
+        >
+          {title === 'Products' && <Products />}
+          {title === 'Services' && <Services />}
+          {title === 'About us' && <About />}
+          {title === 'Support' && <Support />}
+        </Box>
+      </Box>
     </Box>
   );
 };

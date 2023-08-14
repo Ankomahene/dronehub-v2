@@ -16,8 +16,15 @@ import { professional, enterprise } from '../../../data';
 const Products = () => {
   return (
     <Box w='full' marginBottom={8}>
-      <Flex gap={24}>
-        <Box>
+      <Flex px={10} justifyContent={'center'} alignItems={'center'}>
+        <Box
+          flex={0.5}
+          display={'flex'}
+          w={'full'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          flexDir={'column'}
+        >
           <Image
             width={226}
             src={
@@ -26,16 +33,11 @@ const Products = () => {
             alt='consumer'
           />
 
-          <Text paddingY={1} fontSize={18} textAlign='center' fontWeight='bold'>
+          <Text paddingY={1} fontSize={18} fontWeight='bold'>
             Professional
           </Text>
           <Box>
-            <Text
-              paddingY={1}
-              textAlign='center'
-              color='#979797'
-              fontSize='14px'
-            >
+            <Text paddingY={1} color='#979797' fontSize='14px'>
               Master at your craft
             </Text>
             <Box>
@@ -50,8 +52,6 @@ const Products = () => {
                       paddingRight={'17px'}
                       paddingBottom={'8px'}
                       paddingLeft={'17px'}
-                      className={`${styles.linkStyle}`}
-                      transition='all .3s'
                     >
                       <Text fontSize={18}>{item.name}</Text>
                     </Box>
@@ -62,7 +62,16 @@ const Products = () => {
           </Box>
         </Box>
 
-        <Box>
+        <Box
+          flex={0.5}
+          borderLeftWidth={1}
+          borderLeftColor={'#eee'}
+          display={'flex'}
+          w={'full'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          flexDir={'column'}
+        >
           <Image
             width={226}
             src={
@@ -71,11 +80,11 @@ const Products = () => {
             alt='consumer'
           />
 
-          <Text paddingY={1} fontSize={17} textAlign='center' fontWeight='bold'>
+          <Text paddingY={1} fontSize={17} fontWeight='bold'>
             Enterprise
           </Text>
           <Box>
-            <Text paddingY={1} textAlign='center' color='#979797' fontSize={13}>
+            <Text paddingY={1} color='#979797' fontSize={13}>
               Drone solutions for work
             </Text>
             <Box>
@@ -90,7 +99,6 @@ const Products = () => {
                       paddingRight={'17px'}
                       paddingBottom={'8px'}
                       paddingLeft={'17px'}
-                      className={`${styles.linkStyle}`}
                       transition='all .3s'
                     >
                       <Text fontSize={17}>{item.name}</Text>
@@ -103,7 +111,14 @@ const Products = () => {
         </Box>
       </Flex>
       <Divider />
-      <Box paddingY={4} marginLeft={'17px'} marginBottom={20}>
+      <Box
+        paddingY={4}
+        marginLeft={'17px'}
+        display={'flex'}
+        w={'full'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
         <Link href='/products'>
           <Box display='flex' gap={3} color='#0645A4' alignItems='center'>
             <Text fontSize={20}>View all products</Text>
