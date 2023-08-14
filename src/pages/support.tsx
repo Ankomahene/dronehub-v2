@@ -18,14 +18,14 @@ const SupportPage = ({ faq }: Props) => {
   return (
     <>
       <SupportBanner />
-      <Box w={{ base: '90%', lg: '80%' }} mx="auto" textAlign="center">
-        <Text fontSize="14px" fontWeight="light" mt="2rem">
+      <Box w={{ base: '90%', lg: '80%' }} mx='auto' textAlign='center'>
+        <Text fontSize='14px' fontWeight='light' mt='2rem'>
           OUR MISSION
         </Text>
-        <Text fontSize="2xl" fontWeight="bold">
-          Is to build a community for people and drones
+        <Text fontSize='48px' fontWeight='700'>
+          To build a community for people and drones
         </Text>
-        <Text my="2rem">
+        <Text my='2rem'>
           Drone and technology solutions provider in Africa.
         </Text>
       </Box>

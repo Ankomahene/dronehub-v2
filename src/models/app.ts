@@ -2,6 +2,18 @@ import { ReactNode } from 'react';
 import { IconType } from 'react-icons/lib';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
+interface ISubContent {
+  id: string;
+  name: string;
+  link: string;
+}
+
+interface IContent {
+  id: string;
+  name: string;
+  link: string;
+  subContent?: ISubContent[];
+}
 export interface IAccessory {
   id: string;
   name: string;
@@ -69,6 +81,7 @@ export interface INavItem {
   id: string;
   name: string;
   link: string;
+  content?: IContent[];
 }
 export interface IContactItem {
   id: string;
@@ -103,9 +116,6 @@ export type Service =
   | 'education'
   | 'consulting'
   | 'rental'
-  | 'maintenance'
-  | 'detection'
-  | 'custom'
   | 'research';
 
 export type IAllServices = {

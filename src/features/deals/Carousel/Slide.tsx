@@ -9,33 +9,33 @@ export const Slide = ({ product }: { product: IDeal }) => {
     <Flex {...slideStyles}>
       <Box {...headerBoxStyles}>
         <Heading {...headingStyles}>{product.description}</Heading>
-        <Text my="1rem" fontSize={{ base: 'md', lg: '2xl' }}>
+        <Text my='1rem' fontSize={{ base: 'md', lg: '2xl' }}>
           {product.name}
         </Text>
         <Flex
-          gap="3rem"
+          gap='3rem'
           justify={{ base: 'center', lg: 'flex-start' }}
-          align="center"
+          align='center'
         >
-          <Text fontSize="xl">US$ {product.salePrice}</Text>
-          <Text textDecoration="line-through" fontSize="sm">
+          <Text fontSize='xl'>US$ {product.salePrice}</Text>
+          <Text textDecoration='line-through' fontSize='sm'>
             US$ {product.cutOutPrice}
           </Text>
         </Flex>
 
-        <Box maxW="250px" my="2rem" mx={{ base: 'auto', lg: '0' }}>
+        <Box maxW='250px' mt='2rem' mb='6rem' mx={{ base: 'auto', lg: '0' }}>
           <CustomMenuButton
-            title="Buy now"
-            color="brand.blue"
-            bgColor="white"
+            title='Buy now'
+            color='brand.blue'
+            bgColor='white'
           />
         </Box>
       </Box>
       <Box
-        w="100%"
-        bgColor="green"
+        w='100%'
+        bgColor='green'
         h={{ base: 'xs', md: 'sm', lg: 'md' }}
-        p="1rem"
+        p='1rem'
         bg={`center / contain no-repeat url(${product.imageUrl})`}
       />
     </Flex>

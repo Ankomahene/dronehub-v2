@@ -12,6 +12,12 @@ import {
   IconButton,
   Image,
   useDisclosure,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Text,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import NextLink from 'next/link';
@@ -23,6 +29,7 @@ import { INavItem } from '../../models/app';
 import { Button } from '../Buttons/Button';
 import styles from './Header.module.scss';
 import { getHeaderStyles } from './_styles';
+import SupportMobile from './MenuItems/SupportMobile';
 
 interface NavbarLargeProps {
   navItems: INavItem[];
@@ -46,38 +53,38 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
 
   return (
     <Box
-      as="nav"
+      as='nav'
       {...getHeaderStyles(isScrolled)}
       className={`navbar fixed-top ${styles.navigationBar}`}
-      transition="all .3s"
+      transition='all .3s'
     >
       <Flex
-        px="1rem"
-        w="90%"
-        m="auto"
-        py="0.5rem"
-        justify="space-between"
-        className="container-fluid"
+        px='1rem'
+        w='90%'
+        m='auto'
+        py='0.5rem'
+        justify='space-between'
+        className='container-fluid'
       >
-        <NextLink className="navbar-brand" href="/" passHref>
-          <Image src={logoUrl} alt="logo" w="80px" />
+        <NextLink className='navbar-brand' href='/' passHref>
+          <Image src={logoUrl} alt='logo' w='80px' />
         </NextLink>
 
         <>
           <IconButton
-            aria-label="Hamburger"
+            aria-label='Hamburger'
             ref={btnRef}
-            fontSize="3xl"
-            variant="ghost"
+            fontSize='3xl'
+            variant='ghost'
             _hover={{ fontSize: '4xl' }}
-            transition="all .3s"
+            transition='all .3s'
             onClick={onOpen}
             icon={<MdShortText />}
           />
 
           <Drawer
             isOpen={isOpen}
-            placement="left"
+            placement='left'
             onClose={onClose}
             finalFocusRef={btnRef}
           >
@@ -85,49 +92,104 @@ export const NavbarSmall = ({ navItems }: NavbarLargeProps) => {
             <DrawerContent>
               <DrawerCloseButton />
               <DrawerHeader>
-                <NextLink className="navbar-brand" href="/" passHref>
+                <NextLink className='navbar-brand' href='/' passHref>
                   <Image
-                    src="assets/images/logo/logo-dark.png"
-                    alt="logo"
-                    w="70px"
+                    src='assets/images/logo/logo-dark.png'
+                    alt='logo'
+                    w='70px'
                   />
                 </NextLink>
               </DrawerHeader>
               <Divider />
 
               <DrawerBody>
-                <Flex flexDir="column">
+                <Accordion allowMultiple marginTop={10}>
                   {navItems.map((navItem) => (
-                    <NextLink
-                      key={navItem.id}
-                      className={`nav-item my-2 text-dark`}
-                      href={navItem.link}
-                      passHref
-                      onClick={onClose}
-                    >
-                      {navItem.name}
-                    </NextLink>
+                    <AccordionItem key={navItem.id} paddingY={4}>
+                      <h2>
+                        <AccordionButton
+                          _expanded={{
+                            color: '#0645A4',
+                          }}
+                        >
+                          <Box as='span' flex='1' textAlign='left'>
+                            <Text fontWeight='bold' fontSize={18}>
+                              {navItem.name}
+                            </Text>
+                          </Box>
+                          <AccordionIcon />
+                        </AccordionButton>
+                      </h2>
+                      <AccordionPanel pb={3}>
+                        {navItem?.content?.map((item) => (
+                          <Box key={item.id}>
+                            {item?.subContent ? (
+                              <Accordion allowMultiple key={item.id}>
+                                <AccordionItem paddingY={2}>
+                                  <h2>
+                                    <AccordionButton
+                                      _expanded={{
+                                        color: '#0645A4',
+                                      }}
+                                    >
+                                      <Box as='span' flex='1' textAlign='left'>
+                                        <Text fontWeight='bold' fontSize={18}>
+                                          {item.name}
+                                        </Text>
+                                      </Box>
+                                      <AccordionIcon />
+                                    </AccordionButton>
+                                  </h2>
+                                  <AccordionPanel pb={2}>
+                                    {item?.subContent?.map((sub) => (
+                                      <Link key={sub.id} href={`${sub.link}`}>
+                                        <Text
+                                          fontSize={15}
+                                          color='#000'
+                                          paddingY={2}
+                                        >
+                                          {sub.name}
+                                        </Text>
+                                      </Link>
+                                    ))}
+                                  </AccordionPanel>
+                                </AccordionItem>
+                              </Accordion>
+                            ) : (
+                              <>
+                                <Link href={`${item.link}`}>
+                                  <Text fontSize={15} color='#000' paddingY={2}>
+                                    {item.name}
+                                  </Text>
+                                </Link>
+                              </>
+                            )}
+                          </Box>
+                        ))}
+                        {navItem.name === 'Support' && <SupportMobile />}
+                      </AccordionPanel>
+                    </AccordionItem>
                   ))}
-                </Flex>
+                </Accordion>
               </DrawerBody>
 
               <DrawerFooter>
                 <Box>
-                  <Link href="/consumer">
+                  <Link href='/consumer'>
                     <Button
-                      title="Consumer Solutions"
-                      bg="brand.blue"
-                      color="gray.100"
-                      w="90%"
-                      mx="auto"
+                      title='Consumer Solutions'
+                      bg='brand.blue'
+                      color='gray.100'
+                      w='90%'
+                      mx='auto'
                       onClick={onClose}
                     />
                   </Link>
-                  <Link href="/business">
+                  <Link href='/business'>
                     <Button
-                      title="Enterprise Solutions"
-                      w="90%"
-                      mx="auto"
+                      title='Enterprise Solutions'
+                      w='90%'
+                      mx='auto'
                       onClick={onClose}
                     />
                   </Link>

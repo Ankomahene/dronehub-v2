@@ -1,11 +1,11 @@
 import { Link, List, ListItem, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-export const OurStore = () => {
+const Products = () => {
   return (
     <>
       <Text fontWeight={500} mt={{ base: 10 }} mb={3}>
-        Our Showroom
+        Products
       </Text>
 
       <List color='gray.500'>
@@ -15,7 +15,7 @@ export const OurStore = () => {
           py={{ base: 2, lg: 2 }}
         >
           <NextLink href='/product' passHref>
-            <Text _hover={{ textDecor: 'none' }}>Consumer Drones</Text>
+            <Text _hover={{ textDecor: 'none' }}>Mavic Series</Text>
           </NextLink>
         </ListItem>
 
@@ -25,7 +25,7 @@ export const OurStore = () => {
           py={{ base: 2, lg: 2 }}
         >
           <NextLink href='/product' passHref>
-            <Text _hover={{ textDecor: 'none' }}>Enterprise Drones</Text>
+            <Text _hover={{ textDecor: 'none' }}>Phantom Series</Text>
           </NextLink>
         </ListItem>
 
@@ -35,7 +35,7 @@ export const OurStore = () => {
           py={{ base: 2, lg: 2 }}
         >
           <NextLink href='/product' passHref>
-            <Text _hover={{ textDecor: 'none' }}>Drone Accessories</Text>
+            <Text _hover={{ textDecor: 'none' }}>Inspire Series</Text>
           </NextLink>
         </ListItem>
 
@@ -45,7 +45,7 @@ export const OurStore = () => {
           py={{ base: 2, lg: 2 }}
         >
           <NextLink href='/product' passHref>
-            <Text _hover={{ textDecor: 'none' }}>Cameras & Gimbals</Text>
+            <Text _hover={{ textDecor: 'none' }}>Matrice Serieis</Text>
           </NextLink>
         </ListItem>
 
@@ -55,10 +55,12 @@ export const OurStore = () => {
           py={{ base: 2, lg: 2 }}
         >
           <NextLink href='/product' passHref>
-            <Text _hover={{ textDecor: 'none' }}>Software Solutions </Text>
+            <Text _hover={{ textDecor: 'none' }}>Agras Series </Text>
           </NextLink>
         </ListItem>
       </List>
     </>
   );
 };
+
+export default Products;
