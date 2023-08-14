@@ -10,13 +10,13 @@ import {
 } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
-import styles from '../Header.module.scss';
+import { motion } from 'framer-motion';
 import { professional, enterprise } from '../../../data';
 
 const Products = () => {
   return (
     <Box w='full' marginBottom={8}>
-      <Flex px={10} justifyContent={'center'} alignItems={'center'}>
+      <Flex px={10} justifyContent={'center'}>
         <Box
           flex={0.5}
           display={'flex'}
@@ -33,11 +33,21 @@ const Products = () => {
             alt='consumer'
           />
 
-          <Text paddingY={1} fontSize={18} fontWeight='bold'>
+          <Text
+            paddingY={1}
+            fontSize={18}
+            fontWeight='bold'
+            textAlign={'center'}
+          >
             Professional
           </Text>
           <Box>
-            <Text paddingY={1} color='#979797' fontSize='14px'>
+            <Text
+              paddingY={1}
+              paddingLeft={'17px'}
+              color='#979797'
+              fontSize='14px'
+            >
               Master at your craft
             </Text>
             <Box>
@@ -45,8 +55,12 @@ const Products = () => {
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
-                      _hover={{
+                      as={motion.button}
+                      whileHover={{
                         color: 'rgba(6, 69, 164, 1)',
+                        backgroundColor: 'rgba(216, 216, 216, 1)',
+                        borderRadius: '5px',
+                        transition: { duration: 0.3 },
                       }}
                       paddingTop={'8px'}
                       paddingRight={'17px'}
@@ -80,11 +94,21 @@ const Products = () => {
             alt='consumer'
           />
 
-          <Text paddingY={1} fontSize={17} fontWeight='bold'>
+          <Text
+            paddingY={1}
+            fontSize={17}
+            fontWeight='bold'
+            textAlign={'center'}
+          >
             Enterprise
           </Text>
           <Box>
-            <Text paddingY={1} color='#979797' fontSize={13}>
+            <Text
+              paddingLeft={'17px'}
+              paddingY={1}
+              color='#979797'
+              fontSize={13}
+            >
               Drone solutions for work
             </Text>
             <Box>
@@ -92,8 +116,12 @@ const Products = () => {
                 <Box key={item.id} paddingY={1}>
                   <Link href={`${item.link}`}>
                     <Box
-                      _hover={{
+                      as={motion.button}
+                      whileHover={{
                         color: 'rgba(6, 69, 164, 1)',
+                        backgroundColor: 'rgba(216, 216, 216, 1)',
+                        borderRadius: '5px',
+                        transition: { duration: 0.3 },
                       }}
                       paddingTop={'8px'}
                       paddingRight={'17px'}
@@ -113,7 +141,6 @@ const Products = () => {
       <Divider />
       <Box
         paddingY={4}
-        marginLeft={'17px'}
         display={'flex'}
         w={'full'}
         justifyContent={'center'}
